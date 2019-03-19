@@ -1,0 +1,5 @@
+C:\Users\2noob4you\Desktop\School\program\Github\OOP\OOP_Project\OOP_Project\obj\Debug\OOP_Project.csprojAssemblyReference.cache
+C:\Users\2noob4you\Desktop\School\program\Github\OOP\OOP_Project\OOP_Project\obj\Debug\MainWindow.g.cs
+C:\Users\2noob4you\Desktop\School\program\Github\OOP\OOP_Project\OOP_Project\obj\Debug\App.g.cs
+C:\Users\2noob4you\Desktop\School\program\Github\OOP\OOP_Project\OOP_Project\obj\Debug\OOP_Project_MarkupCompile.cache
+C:\Users\2noob4you\Desktop\School\program\Github\OOP\OOP_Project\OOP_Project\obj\Debug\OOP_Project_MarkupCompile.lref
