@@ -25,8 +25,7 @@
                            Padding="2"/>
                 <ListBox Grid.Row="1" 
                          ItemsSource="{Binding SelectedCustomer.LoanTransactions}"
-                         SelectedItem="{Binding SelectedLoanTransaction}"
-                         IsEnabled="False">
+                         SelectedItem="{Binding SelectedLoanTransaction}">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
                             <StackPanel>
@@ -37,15 +36,15 @@
                                                Padding="2"/>
                                 </StackPanel>
                                 <StackPanel Orientation="Horizontal">
-                                    <TextBlock Text="Address:"
+                                    <TextBlock Text="Loan Amount:"
                                                Padding="2"/>
                                     <TextBlock Text="{Binding Path=LoanAmount}"
                                                Padding="2"/>
                                 </StackPanel>
                                 <StackPanel Orientation="Horizontal">
-                                    <TextBlock Text="Contact Number:"
+                                    <TextBlock Text="Date of Loan:"
                                                Padding="2"/>
-                                    <TextBlock Text="{Binding Path=TransactionDate.Date}"
+                                    <TextBlock Text="{Binding Path=TransactionDate.Date, StringFormat=d}"
                                                Padding="2"/>
                                 </StackPanel>
                             </StackPanel>
@@ -65,30 +64,48 @@
                            HorizontalAlignment="Center"
                            Padding="2"/>
                 <ListBox Grid.Row="1" 
-                         ItemsSource="{Binding SelectedLoanTransaction.PaymentTransactions}"
-                         IsEnabled="False">
+                         ItemsSource="{Binding SelectedLoanTransaction.PaymentTransactions}">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
                             <StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Jewelry ID:"
+                                               Padding="2"/>
+                                    <TextBlock Text="{Binding Path=JewelryCollateral.JewelryId}"
+                                               Padding="2"/>
+                                </StackPanel>
                                 <StackPanel Orientation="Horizontal">
                                     <TextBlock Text="Jewelry Deposit:"
                                                Padding="2"/>
                                     <TextBlock Text="{Binding Path=JewelryCollateral.JewelryType}"
                                                Padding="2"/>
                                 </StackPanel>
+                                
                                 <StackPanel Orientation="Horizontal">
-                                    <TextBlock Text="Address:"
+                                    <TextBlock Text="Accrued Amount:"
                                                Padding="2"/>
-                                    <TextBlock Text="{Binding Path=}"
+                                    <TextBlock Text="{Binding Path=AccumulatedAmountOfLoan}"
                                                Padding="2"/>
                                 </StackPanel>
                                 <StackPanel Orientation="Horizontal">
-                                    <TextBlock Text="Contact Number:"
+                                    <TextBlock Text="Amount paid:"
                                                Padding="2"/>
-                                    <TextBlock Text="{Binding Path=}"
+                                    <TextBlock Text="{Binding Path=PaymentAmount}"
                                                Padding="2"/>
                                 </StackPanel>
-                            </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Date of Payment:"
+                                               Padding="2"/>
+                                    <TextBlock Text="{Binding Path=PaymentDate, StringFormat=d}"
+                                               Padding="2"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Remaining Balance:"
+                                               Padding="2"/>
+                                    <TextBlock Text="{Binding Path=Loan.RemainingBalance}"
+                                               Padding="2"/>
+                                </StackPanel>
+                        </StackPanel>
                         </DataTemplate>
                     </ListBox.ItemTemplate>
                 </ListBox>

@@ -39,7 +39,7 @@
                     <TextBlock Text="Paid Loans:"
                                Padding="2"
                                FontWeight="DemiBold"/>
-                    <TextBlock Text="{Binding SelectedCustomer.PaymentTransactions.Count}"
+                    <TextBlock Text="{Binding SelectedCustomer.FullyPaidLoans}"
                                Padding="2"
                                FontWeight="Bold"/>
                 </StackPanel>

@@ -47,10 +47,42 @@
             <TextBlock Grid.Row="0" 
                        Text="Jewelries Pawned"
                        Padding="2"/>
-            <ListBox Grid.Row="1">
+            <ListBox Grid.Row="1"
+                     ItemsSource="{Binding SelectedCustomer.LoanTransactions}">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
-
+                        <StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Jewelry ID:"
+                                           Padding="2"/>
+                                <TextBlock Text="{Binding Path=JewelryCollateral.JewelryId}"
+                                           Padding="2"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Jewelry Deposit:"
+                                           Padding="2"/>
+                                <TextBlock Text="{Binding Path=JewelryCollateral.JewelryType}"
+                                           Padding="2"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Quality:"
+                                           Padding="2"/>
+                                <TextBlock Text="{Binding Path=JewelryCollateral.JewelryQuality}"
+                                           Padding="2"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Price:"
+                                           Padding="2"/>
+                                <TextBlock Text="{Binding Path=JewelryCollateral.TotalValue, StringFormat=C, ConverterCulture=php-PH}"
+                                           Padding="2"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Description:"
+                                           Padding="2"/>
+                                <TextBlock Text="{Binding Path=JewelryCollateral.Description}"
+                                           Padding="2"/>
+                            </StackPanel>
+                        </StackPanel>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>

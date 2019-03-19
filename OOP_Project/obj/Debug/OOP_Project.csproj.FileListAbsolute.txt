@@ -33,3 +33,5 @@ C:\Users\2noob4you\Desktop\School\program\Github\OOP\OOP_Project\OOP_Project\obj
 C:\Users\2noob4you\Desktop\School\program\Github\OOP\OOP_Project\OOP_Project\obj\Debug\Views\MainTransactionWindow.baml
 C:\Users\2noob4you\Desktop\School\program\Github\OOP\OOP_Project\OOP_Project\obj\Debug\Views\GenInformationView.g.cs
 C:\Users\2noob4you\Desktop\School\program\Github\OOP\OOP_Project\OOP_Project\obj\Debug\Views\GenInformationView.baml
+C:\Users\2noob4you\Desktop\School\program\Github\OOP\OOP_Project\OOP_Project\obj\Debug\Views\TransactionsView.g.cs
+C:\Users\2noob4you\Desktop\School\program\Github\OOP\OOP_Project\OOP_Project\obj\Debug\Views\TransactionsView.baml
