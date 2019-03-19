@@ -1,8 +1,9 @@
 ﻿using System.Security.Policy;
+using GalaSoft.MvvmLight;
 
 namespace OOP_Project
 {
-    public class Jewelry
+    public class Jewelry : ObservableObject
     {
         public Jewelry()
         {

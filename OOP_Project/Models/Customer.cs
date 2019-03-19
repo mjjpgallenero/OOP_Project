@@ -1,9 +1,11 @@
 ﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Windows.Documents;
+using GalaSoft.MvvmLight;
 
 namespace OOP_Project
 {
-    public class Customer
+    public class Customer : ObservableObject
     {
         public Customer()
         {
@@ -12,7 +14,7 @@ namespace OOP_Project
         public string Name { get; set; }
         public string Address { get; set; }
         public string ContactNumber { get; set; }
-        public List<LoanTransaction> LoanTransactions { get; set; } = new List<LoanTransaction>();
-        public List<PaymentTransaction> PaymentTransactions { get; set; } = new List<PaymentTransaction>();
+        public ObservableCollection<LoanTransaction> LoanTransactions { get; set; } = new ObservableCollection<LoanTransaction>();
+        public int FullyPaidLoans { get; set; }
     }
 }

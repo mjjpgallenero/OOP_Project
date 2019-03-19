@@ -10,16 +10,17 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace OOP_Project.Views
 {
     /// <summary>
-    /// Interaction logic for MainTransactionWindow.xaml
+    /// Interaction logic for TransactionsView.xaml
     /// </summary>
-    public partial class MainTransactionWindow : Window
+    public partial class TransactionsView : UserControl
     {
-        public MainTransactionWindow()
+        public TransactionsView()
         {
             InitializeComponent();
             DataContext = App.Locator.MainTransactionWindowViewModel;

@@ -10,7 +10,7 @@
         DataContext="{Binding MainTransactionWindowViewModel, Source={StaticResource Locator}}">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="0.175*"/>
+            <RowDefinition Height="0.2*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
@@ -23,7 +23,7 @@
                     <TextBlock Text="Welcome,"
                                Padding="2"
                                FontWeight="DemiBold"/>
-                    <TextBlock Text="{Binding Profile}"
+                    <TextBlock Text="{Binding SelectedCustomer.Name}"
                                Padding="2"
                                FontWeight="Bold"/>
                 </StackPanel>
@@ -31,7 +31,7 @@
                     <TextBlock Text="Total Loans:"
                                Padding="2"
                                FontWeight="DemiBold"/>
-                    <TextBlock Text=""
+                    <TextBlock Text="{Binding SelectedCustomer.LoanTransactions.Count}"
                                Padding="2"
                                FontWeight="Bold"/>
                 </StackPanel>
@@ -39,7 +39,7 @@
                     <TextBlock Text="Paid Loans:"
                                Padding="2"
                                FontWeight="DemiBold"/>
-                    <TextBlock Text=""
+                    <TextBlock Text="{Binding SelectedCustomer.PaymentTransactions.Count}"
                                Padding="2"
                                FontWeight="Bold"/>
                 </StackPanel>
@@ -58,7 +58,7 @@
                                 <ControlTemplate TargetType="TabItem">
                                     <Border
                                         Name="Border"
-                                        Margin="0,10,0,10"
+                                        Margin="0,8,0,12"
                                         Padding="10"
                                         BorderBrush="Gainsboro"
                                         BorderThickness="1,1,1,0"
@@ -88,12 +88,12 @@
                          FontWeight="Bold"
                          Padding="15"
                          IsSelected="True">
-                
+                <local:GenInformationView/>
                 </TabItem>
                 <TabItem Header="Transactions"
                          FontWeight="Bold"
                          Padding="15">
-
+                <local:TransactionsView/>
                 </TabItem>
                 <TabItem Header="Apply for Loan"
                          FontWeight="Bold"

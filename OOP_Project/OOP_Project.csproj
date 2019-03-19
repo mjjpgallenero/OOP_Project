@@ -81,8 +81,14 @@
     <Compile Include="Views\AddNewCustomerView.xaml.cs">
       <DependentUpon>AddNewCustomerView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\GenInformationView.xaml.cs">
+      <DependentUpon>GenInformationView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\MainTransactionWindow.xaml.cs">
       <DependentUpon>MainTransactionWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TransactionsView.xaml.cs">
+      <DependentUpon>TransactionsView.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -101,7 +107,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\GenInformationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\MainTransactionWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TransactionsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

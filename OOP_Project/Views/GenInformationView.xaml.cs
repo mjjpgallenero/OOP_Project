@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace OOP_Project.Views
 {
     /// <summary>
-    /// Interaction logic for MainTransactionWindow.xaml
+    /// Interaction logic for GenInformationView.xaml
     /// </summary>
-    public partial class MainTransactionWindow : Window
+    public partial class GenInformationView : UserControl
     {
-        public MainTransactionWindow()
+        public GenInformationView()
         {
             InitializeComponent();
             DataContext = App.Locator.MainTransactionWindowViewModel;

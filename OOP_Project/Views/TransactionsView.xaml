@@ -1,0 +1,98 @@
+﻿<UserControl x:Class="OOP_Project.Views.TransactionsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:OOP_Project.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="350" d:DesignWidth="400"
+             DataContext="{Binding MainTransactionWindowViewModel, Source={StaticResource Locator}}">
+    <Grid>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="0" Margin="5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Text="Loan Records"
+                           HorizontalAlignment="Center"
+                           Padding="2"/>
+                <ListBox Grid.Row="1" 
+                         ItemsSource="{Binding SelectedCustomer.LoanTransactions}"
+                         SelectedItem="{Binding SelectedLoanTransaction}"
+                         IsEnabled="False">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Jewelry Deposit:"
+                                               Padding="2"/>
+                                    <TextBlock Text="{Binding Path=JewelryCollateral.JewelryType}"
+                                               Padding="2"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Address:"
+                                               Padding="2"/>
+                                    <TextBlock Text="{Binding Path=LoanAmount}"
+                                               Padding="2"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Contact Number:"
+                                               Padding="2"/>
+                                    <TextBlock Text="{Binding Path=TransactionDate.Date}"
+                                               Padding="2"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </Grid>
+
+        <Grid Grid.Column="1" 
+                  Margin="5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Text="Payment Records"
+                           HorizontalAlignment="Center"
+                           Padding="2"/>
+                <ListBox Grid.Row="1" 
+                         ItemsSource="{Binding SelectedLoanTransaction.PaymentTransactions}"
+                         IsEnabled="False">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Jewelry Deposit:"
+                                               Padding="2"/>
+                                    <TextBlock Text="{Binding Path=JewelryCollateral.JewelryType}"
+                                               Padding="2"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Address:"
+                                               Padding="2"/>
+                                    <TextBlock Text="{Binding Path=}"
+                                               Padding="2"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Contact Number:"
+                                               Padding="2"/>
+                                    <TextBlock Text="{Binding Path=}"
+                                               Padding="2"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </Grid>
+        
+    </Grid>
+</UserControl>
