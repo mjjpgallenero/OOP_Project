@@ -57,7 +57,9 @@ namespace OOP_Project.ViewModels
                 }
                 else
                 {
-                    MessageBox.Show("Error", "Please enter a valid number.", MessageBoxButton.OK);
+                    MessageBox.Show("Please enter a valid number.", "Error", MessageBoxButton.OK);
+                    _newCustomerContactNumber = null;
+                    RaisePropertyChanged(nameof(NewCustomerContactNumber));
                 }
             }
         }
@@ -66,12 +68,19 @@ namespace OOP_Project.ViewModels
 
         private void AddNewCustomerProc()
         {
-            var newCustomer = new Customer();
-            newCustomer.Name = NewCustomerName;
-            newCustomer.Address = NewCustomerAddress;
-            newCustomer.ContactNumber = NewCustomerContactNumber;
-            
-            _mainWindowViewModel.CustomerList.Add(newCustomer);
+            if (NewCustomerName == null || NewCustomerAddress == null || NewCustomerContactNumber == null)
+            {
+                MessageBox.Show("Please fill in all fields.", "Error", MessageBoxButton.OK);
+            }
+            else
+            {
+                var newCustomer = new Customer();
+                newCustomer.Name = NewCustomerName;
+                newCustomer.Address = NewCustomerAddress;
+                newCustomer.ContactNumber = NewCustomerContactNumber;
+
+                _mainWindowViewModel.CustomerList.Add(newCustomer);
+            }
         }
 
     }

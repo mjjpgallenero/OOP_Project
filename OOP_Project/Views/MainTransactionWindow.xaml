@@ -98,7 +98,7 @@
                 <TabItem Header="Apply for Loan"
                          FontWeight="Bold"
                          Padding="15">
-
+                <local:AddNewLoanTransactionView/>
                 </TabItem>
                 <TabItem Header="Loan Payment"
                          FontWeight="Bold"

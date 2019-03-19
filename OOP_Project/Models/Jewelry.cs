@@ -18,8 +18,6 @@ namespace OOP_Project
             
         }
 
-        public string[] JewelryQualities = {"10K", "18K", "21K"};
-
         public string JewelryId
         {
             get { return _jewelryId; }
@@ -102,9 +100,5 @@ namespace OOP_Project
  
     }
 
-    public enum JewelryTypes
-    {
-        Ring, Necklace, Bracelet, Earring
-    }
 
 }

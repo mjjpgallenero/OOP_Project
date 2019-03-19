@@ -46,6 +46,7 @@
 
             <TextBlock Grid.Row="0" 
                        Text="Jewelries Pawned"
+                       HorizontalAlignment="Center"
                        Padding="2"/>
             <ListBox Grid.Row="1"
                      ItemsSource="{Binding SelectedCustomer.LoanTransactions}">

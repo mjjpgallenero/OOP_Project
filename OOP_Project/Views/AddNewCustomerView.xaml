@@ -20,21 +20,24 @@
             <TextBlock Text="Customer Name"
                        FontWeight="Bold"
                        Padding="2"/>
-            <TextBox Text="{Binding NewCustomerName}"
+            <TextBox Name="CName" 
+                     Text="{Binding NewCustomerName}"
                      Padding="2"/>
         </StackPanel>
         <StackPanel Grid.Row="1">
             <TextBlock Text="Address"
                      FontWeight="Bold"
                      Padding="2"/>
-            <TextBox Text="{Binding NewCustomerAddress}"
+            <TextBox Name="CAddress" 
+                     Text="{Binding NewCustomerAddress}"
                      Padding="2"/>
         </StackPanel>
         <StackPanel Grid.Row="2">
             <TextBlock Text="Contact Number"
                        FontWeight="Bold"
                        Padding="2"/>
-            <TextBox Text="{Binding NewCustomerContactNumber}"
+            <TextBox Name="CNumber" 
+                     Text="{Binding NewCustomerContactNumber}"
                      Padding="2"/>
         </StackPanel>
 

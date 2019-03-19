@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using GalaSoft.MvvmLight;
 
 namespace OOP_Project.ViewModels
@@ -16,11 +17,11 @@ namespace OOP_Project.ViewModels
             MockData();
         }
 
-        public void MockData()
+        private void MockData()
         {
             var jewelry = new Jewelry();
-            jewelry.JewelryId = "0000-0001";
-            jewelry.JewelryType = JewelryTypes.Ring.ToString();
+            jewelry.JewelryId = "00000001";
+            jewelry.JewelryType = "Ring";
             jewelry.JewelryQuality = "10k";
             jewelry.CrystalWeight = 1.5;
             jewelry.Weight = 6;
@@ -59,5 +60,6 @@ namespace OOP_Project.ViewModels
             }
         }
 
+        
     }
 }

@@ -76,10 +76,14 @@
     <Compile Include="NullToVisibilityConverter.cs" />
     <Compile Include="ViewModelLocator.cs" />
     <Compile Include="ViewModels\AddNewCustomerViewModel.cs" />
+    <Compile Include="ViewModels\AddNewLoanTransactionViewModel.cs" />
     <Compile Include="ViewModels\MainTransactionWindowViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="Views\AddNewCustomerView.xaml.cs">
       <DependentUpon>AddNewCustomerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AddNewLoanTransactionView.xaml.cs">
+      <DependentUpon>AddNewLoanTransactionView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\GenInformationView.xaml.cs">
       <DependentUpon>GenInformationView.xaml</DependentUpon>
@@ -104,6 +108,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Views\AddNewCustomerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AddNewLoanTransactionView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

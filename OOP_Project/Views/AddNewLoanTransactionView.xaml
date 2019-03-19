@@ -1,0 +1,72 @@
+﻿<UserControl x:Class="OOP_Project.Views.AddNewLoanTransactionView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:OOP_Project.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="400" d:DesignWidth="400"
+             DataContext="{Binding AddNewLoanTransactionViewModel, Source={StaticResource Locator}}">
+    <Grid Margin="8">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0">
+            <TextBlock Text="Jewelry Type"
+                       FontWeight="Bold"
+                       Padding="2"/>
+            <ComboBox ItemsSource="{Binding JewelryTypes}"
+                      SelectedItem="{Binding NewJewelryType, Mode=TwoWay}"
+                      Padding="2"
+                      Name="JType"/>
+        </StackPanel>
+        <StackPanel Grid.Row="1">
+            <TextBlock Text="Jewelry Quality"
+                       FontWeight="Bold"
+                       Padding="2"/>
+            <ComboBox ItemsSource="{Binding JewelryQualities}"
+                      SelectedItem="{Binding NewJewelryQuality, Mode=TwoWay}"
+                      Name="JQuality"/>
+        </StackPanel>
+        <StackPanel Grid.Row="2">
+            <TextBlock Text="Weight"
+                       FontWeight="Bold"
+                       Padding="2"/>
+            <TextBox Text="{Binding NewJewelryWeight, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                     Padding="2"
+                     Name="JWeight"/>
+        </StackPanel>
+        <StackPanel Grid.Row="3">
+            <TextBlock Text="Crystal Weight"
+                       FontWeight="Bold"
+                       Padding="2"/>
+            <TextBox Text="{Binding NewJewelryCrystalWeight, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                     Padding="2"
+                     Name="JCWeight"/>
+        </StackPanel>
+        <StackPanel Grid.Row="4">
+            <TextBlock Text="Description"
+                       FontWeight="Bold"
+                       Padding="2"/>
+            <TextBox Text="{Binding NewJewelryDescription}"
+                     Padding="2"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="5" 
+                    Orientation="Horizontal"
+                    VerticalAlignment="Bottom"
+                    HorizontalAlignment="Right">
+            <Button Content="Confirm"
+                    Padding="2"
+                    Command="{Binding AddNewLoanTransactionCommand}" Click="Button_Click"
+                    />
+        </StackPanel>
+
+    </Grid>
+</UserControl>
