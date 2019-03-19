@@ -87,7 +87,7 @@ namespace OOP_Project.ViewModels
         {
             var newJewelry = new Jewelry();
             newJewelry.JewelryId =
-                (int.Parse(_mainTransactionWindowViewModel.SelectedCustomer.LoanTransactions.LastOrDefault().JewelryCollateral.JewelryId) + 1).ToString();
+               $"0000000{(int.Parse(_mainTransactionWindowViewModel.SelectedCustomer.LoanTransactions.LastOrDefault().JewelryCollateral.JewelryId) + 1)}";
             newJewelry.JewelryQuality = NewJewelryQuality;
             newJewelry.JewelryType = NewJewelryType;
             if (NewJewelryCrystalWeight != null) newJewelry.CrystalWeight = (double) NewJewelryCrystalWeight;
@@ -99,6 +99,11 @@ namespace OOP_Project.ViewModels
             newLoanTransaction.TransactionDate = DateTime.UtcNow;
             _mainTransactionWindowViewModel.SelectedCustomer.LoanTransactions.Add(newLoanTransaction);
             MessageBox.Show("Loan Successful!", "Transaction Alert", MessageBoxButton.OK);
+            NewJewelryType = null;
+            NewJewelryQuality = null;
+            NewJewelryWeight = null;
+            NewJewelryCrystalWeight = null;
+            NewJewelryDescription = null;
         }
 
         private bool AddNewLoanTransactionCondition()
