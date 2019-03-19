@@ -1,4 +1,3 @@
-C:\Users\2noob4you\Desktop\School\program\Github\OOP\OOP_Project\OOP_Project\obj\Debug\OOP_Project.csprojAssemblyReference.cache
 C:\Users\2noob4you\Desktop\School\program\Github\OOP\OOP_Project\OOP_Project\obj\Debug\MainWindow.g.cs
 C:\Users\2noob4you\Desktop\School\program\Github\OOP\OOP_Project\OOP_Project\obj\Debug\App.g.cs
 C:\Users\2noob4you\Desktop\School\program\Github\OOP\OOP_Project\OOP_Project\obj\Debug\OOP_Project_MarkupCompile.cache
@@ -25,3 +24,7 @@ C:\Users\2noob4you\Desktop\School\program\Github\OOP\OOP_Project\OOP_Project\obj
 C:\Users\2noob4you\Desktop\School\program\Github\OOP\OOP_Project\OOP_Project\obj\Debug\OOP_Project.csproj.CopyComplete
 C:\Users\2noob4you\Desktop\School\program\Github\OOP\OOP_Project\OOP_Project\obj\Debug\OOP_Project.exe
 C:\Users\2noob4you\Desktop\School\program\Github\OOP\OOP_Project\OOP_Project\obj\Debug\OOP_Project.pdb
+C:\Users\2noob4you\Desktop\School\program\Github\OOP\OOP_Project\OOP_Project\obj\Debug\Views\AddNewCustomerView.g.cs
+C:\Users\2noob4you\Desktop\School\program\Github\OOP\OOP_Project\OOP_Project\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\2noob4you\Desktop\School\program\Github\OOP\OOP_Project\OOP_Project\obj\Debug\App.baml
+C:\Users\2noob4you\Desktop\School\program\Github\OOP\OOP_Project\OOP_Project\obj\Debug\Views\AddNewCustomerView.baml

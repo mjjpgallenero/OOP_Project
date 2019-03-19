@@ -5,8 +5,79 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OOP_Project"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" MaxHeight="450" MaxWidth="800"
+        DataContext="{Binding Path=MainWindowViewModel, Source={StaticResource Locator}}">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0">
+            <TextBlock Text="Welcome to Blank and Blank Loan Co." 
+                       HorizontalAlignment="Center"
+                       FontSize="30"
+                       Margin="0,50,0,0"/>
+
+            <TextBlock Text="Please select a customer to make a transaction."
+                       HorizontalAlignment="Center"
+                       FontSize="20"
+                       Margin="0,30,0,0"/>
+        </StackPanel>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height=".8*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <ListBox Grid.Row="0"
+                     Width="250"
+                     BorderThickness="1"
+                     Padding="5"
+                     ItemsSource="{Binding CustomerList}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Name:"
+                                           Padding="2"/>
+                                <TextBlock Text="{Binding Path=Name}"
+                                           Padding="2"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Address:"
+                                           Padding="2"/>
+                                <TextBlock Text="{Binding Path=Address}"
+                                           Padding="2"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Contact Number:"
+                                           Padding="2"/>
+                                <TextBlock Text="{Binding Path=ContactNumber}"
+                                           Padding="2"/>
+                            </StackPanel>
+                        </StackPanel>
+                         
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+            <StackPanel Grid.Row="1">
+                <StackPanel Orientation="Horizontal" 
+                            HorizontalAlignment="Center">
+                <TextBlock Text="Not in the list?"
+                           Padding="3"/>
+                <Button Content="Sign Up" 
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Top"
+                        Background="White"
+                        Foreground="MediumBlue"
+                        BorderThickness="0"
+                        Padding="3"/>
+                </StackPanel>
+                <Button Content="Continue"
+                        FontSize="25"
+                        HorizontalAlignment="Center"
+                        Height="40"
+                        Margin="0,50,0,0"/>
+            </StackPanel>
+        </Grid>
     </Grid>
 </Window>
