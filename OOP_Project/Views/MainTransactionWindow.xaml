@@ -1,0 +1,31 @@
+﻿<Window x:Class="OOP_Project.Views.MainTransactionWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OOP_Project.Views"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="MainTransactionWindow" Height="450" Width="800"
+        DataContext="{Binding MainTransactionWindowViewModel, Source={StaticResource Locator}}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.2*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Row="0">
+            <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Right">
+                <TextBlock Text="Welcome,"
+                           Padding="2"/>
+                <TextBlock Text="{Binding Profile}"
+                           Padding="2"
+                           />
+            </StackPanel>
+        </Grid>
+        <Grid Row="1">
+
+        </Grid>
+    </Grid>
+</Window>

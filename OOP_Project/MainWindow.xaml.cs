@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using OOP_Project.Views;
 
 namespace OOP_Project
 {
@@ -23,6 +24,16 @@ namespace OOP_Project
         public MainWindow()
         {
             InitializeComponent();
+            this.DataContext = App.Locator.MainWindowViewModel;
+        }
+
+        private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
+        {
+            var window = new MainTransactionWindow();
+            Application.Current.MainWindow = window;
+            window.Show();
+            this.Close();
+
         }
     }
 }

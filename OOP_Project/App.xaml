@@ -8,6 +8,7 @@
              <ResourceDictionary.MergedDictionaries>
                  <ResourceDictionary>
                      <local:ViewModelLocator x:Key="Locator"/>
+                     <local:NullToVisibilityConverter x:Key="NullToVisibilityConverter"></local:NullToVisibilityConverter>
                  </ResourceDictionary>
              </ResourceDictionary.MergedDictionaries>
          </ResourceDictionary>

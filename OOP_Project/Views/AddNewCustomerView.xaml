@@ -5,8 +5,52 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OOP_Project.Views"
         mc:Ignorable="d"
-        Title="AddNewCustomerView" Height="450" Width="800">
-    <Grid>
+        Title="AddNewCustomerView" Height="300" Width="250"
+        WindowStartupLocation="CenterScreen"
+        >
+    <Grid Margin="8">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
         
+        <StackPanel Grid.Row="0">
+            <TextBlock Text="Customer Name"
+                       FontWeight="Bold"
+                       Padding="2"/>
+            <TextBox Text="{Binding NewCustomerName}"
+                     Padding="2"/>
+        </StackPanel>
+        <StackPanel Grid.Row="1">
+            <TextBlock Text="Address"
+                     FontWeight="Bold"
+                     Padding="2"/>
+            <TextBox Text="{Binding NewCustomerAddress}"
+                     Padding="2"/>
+        </StackPanel>
+        <StackPanel Grid.Row="2">
+            <TextBlock Text="Contact Number"
+                       FontWeight="Bold"
+                       Padding="2"/>
+            <TextBox Text="{Binding NewCustomerContactNumber}"
+                     Padding="2"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="3" 
+                    Orientation="Horizontal"
+                    VerticalAlignment="Bottom"
+                    HorizontalAlignment="Right">
+            <Button Content="Confirm"
+                    Padding="2"
+                    Margin="0,0,10,0"
+                    Command="{Binding AddNewCustomerCommand}" Click="Button_Click"/>
+            <Button Content="Cancel"
+                    Padding="2"
+                    DataContext="{Binding Path=MainWindowViewModel, Source={StaticResource Locator}}"
+                    Command="{Binding CloseAddNewCustomerWindowCommand}"/>
+        </StackPanel>
+
     </Grid>
 </Window>

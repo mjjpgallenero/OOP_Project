@@ -13,5 +13,14 @@ namespace OOP_Project
     /// </summary>
     public partial class App : Application
     {
+        private static ViewModelLocator _locator;
+        public static ViewModelLocator Locator
+        {
+            get
+            {
+                return _locator ?? (_locator = new ViewModelLocator());
+            }
+        }
+
     }
 }

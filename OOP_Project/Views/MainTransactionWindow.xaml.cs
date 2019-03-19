@@ -15,19 +15,13 @@ using System.Windows.Shapes;
 namespace OOP_Project.Views
 {
     /// <summary>
-    /// Interaction logic for AddNewCustomerView.xaml
+    /// Interaction logic for MainTransactionWindow.xaml
     /// </summary>
-    public partial class AddNewCustomerView : Window
+    public partial class MainTransactionWindow : Window
     {
-        public AddNewCustomerView()
+        public MainTransactionWindow()
         {
             InitializeComponent();
-            this.DataContext = App.Locator.AddNewCustomerViewModel;
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
         }
     }
 }
