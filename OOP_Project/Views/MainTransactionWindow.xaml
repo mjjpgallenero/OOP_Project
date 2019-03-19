@@ -6,26 +6,106 @@
         xmlns:local="clr-namespace:OOP_Project.Views"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="MainTransactionWindow" Height="450" Width="800"
+        Title="MainTransactionWindow" Height="400" Width="600"
         DataContext="{Binding MainTransactionWindowViewModel, Source={StaticResource Locator}}">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="0.2*"/>
+            <RowDefinition Height="0.175*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
+        <Border BorderThickness="0,0,0,1"
+                BorderBrush="Black">
         <Grid Row="0">
-            <StackPanel Orientation="Horizontal"
-                        HorizontalAlignment="Right">
-                <TextBlock Text="Welcome,"
-                           Padding="2"/>
-                <TextBlock Text="{Binding Profile}"
-                           Padding="2"
-                           />
-            </StackPanel>
-        </Grid>
-        <Grid Row="1">
+            <StackPanel HorizontalAlignment="Right">
 
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Welcome,"
+                               Padding="2"
+                               FontWeight="DemiBold"/>
+                    <TextBlock Text="{Binding Profile}"
+                               Padding="2"
+                               FontWeight="Bold"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Total Loans:"
+                               Padding="2"
+                               FontWeight="DemiBold"/>
+                    <TextBlock Text=""
+                               Padding="2"
+                               FontWeight="Bold"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Paid Loans:"
+                               Padding="2"
+                               FontWeight="DemiBold"/>
+                    <TextBlock Text=""
+                               Padding="2"
+                               FontWeight="Bold"/>
+                </StackPanel>
+                </StackPanel>
+        </Grid>
+        </Border>
+
+        <Grid Row="1">
+            <TabControl TabStripPlacement="Left"
+                        Margin="10"
+                        BorderBrush="Gainsboro">
+                <TabControl.Resources>
+                    <Style TargetType="TabItem">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="TabItem">
+                                    <Border
+                                        Name="Border"
+                                        Margin="0,10,0,10"
+                                        Padding="10"
+                                        BorderBrush="Gainsboro"
+                                        BorderThickness="1,1,1,0"
+                                        CornerRadius="0,0,0,0">
+                                        <ContentPresenter
+                                            x:Name="ContentSite"
+                                            Margin="10,2"
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center"
+                                            ContentSource="Header" />
+                                    </Border>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsSelected" Value="True">
+                                            <Setter TargetName="Border" Property="Background" Value="Gainsboro"/>
+                                        </Trigger>
+                                        <Trigger Property="IsSelected" Value="False">
+                                            <Setter TargetName="Border" Property="Background" Value="Transparent" />
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </TabControl.Resources>
+
+                <TabItem Header="General Information"
+                         FontWeight="Bold"
+                         Padding="15"
+                         IsSelected="True">
+                
+                </TabItem>
+                <TabItem Header="Transactions"
+                         FontWeight="Bold"
+                         Padding="15">
+
+                </TabItem>
+                <TabItem Header="Apply for Loan"
+                         FontWeight="Bold"
+                         Padding="15">
+
+                </TabItem>
+                <TabItem Header="Loan Payment"
+                         FontWeight="Bold"
+                         Padding="15">
+
+                </TabItem>
+            </TabControl>
         </Grid>
     </Grid>
 </Window>
