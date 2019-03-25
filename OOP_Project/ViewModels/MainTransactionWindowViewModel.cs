@@ -8,16 +8,16 @@ namespace OOP_Project.ViewModels
     {
         private MainWindowViewModel _mainWindowViewModel;
         private Customer _selectedCustomer;
-        private LoanTransaction _selectedLoanTransaction;
+        private LoanTransaction _selectedLoanTransactionToView;
 
         public MainTransactionWindowViewModel(MainWindowViewModel mainWindowViewModel)
         {
             _mainWindowViewModel = mainWindowViewModel;
             SelectedCustomer = _mainWindowViewModel.SelectedCustomer;
-            MockData();
+            GenerateMockData();
         }
 
-        private void MockData()
+        private void GenerateMockData()
         {
             var jewelry = new Jewelry();
             jewelry.JewelryId = "00000001";
@@ -50,13 +50,13 @@ namespace OOP_Project.ViewModels
             }
         }
 
-        public LoanTransaction SelectedLoanTransaction
+        public LoanTransaction SelectedLoanTransactionToView
         {
-            get { return _selectedLoanTransaction; }
+            get { return _selectedLoanTransactionToView; }
             set
             {
-                _selectedLoanTransaction = value; 
-                RaisePropertyChanged(nameof(SelectedLoanTransaction));
+                _selectedLoanTransactionToView = value; 
+                RaisePropertyChanged(nameof(SelectedLoanTransactionToView));
             }
         }
 

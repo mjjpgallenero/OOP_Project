@@ -7,10 +7,10 @@ namespace OOP_Project
     public class PaymentTransaction : ObservableObject
     {
         private LoanTransaction _loan;
-        private string _status;
         private Jewelry _jewelryCollateral;
         private double _accumulatedAmountOfLoan;
         private double _paymentAmount;
+        private double _remainingBalance;
         private DateTime _paymentDate;
 
         public PaymentTransaction()
@@ -26,18 +26,6 @@ namespace OOP_Project
                 _loan = value; 
                 RaisePropertyChanged(nameof(Loan));
                 RaisePropertyChanged(nameof(AccumulatedAmountOfLoan));
-            }
-        }
-
-        public string Status
-        {
-            get { return _status; }
-            set
-            {
-                _status = value;
-                if (Loan.RemainingBalance == 0) _status = "Fully Paid";
-                else _status = "Partial";
-                RaisePropertyChanged(nameof(Status));
             }
         }
 
@@ -69,6 +57,7 @@ namespace OOP_Project
             {
                 _paymentAmount = value; 
                 RaisePropertyChanged(nameof(PaymentAmount));
+                RaisePropertyChanged(nameof(RemainingBalance));
             }
         }
 
@@ -80,6 +69,16 @@ namespace OOP_Project
                 _paymentDate = value;
                 RaisePropertyChanged(nameof(PaymentDate));
             }
+        }
+
+        public double RemainingBalance
+        {
+            get
+            {
+                _remainingBalance = AccumulatedAmountOfLoan - PaymentAmount;
+                return _remainingBalance;
+            }
+
         }
 
         public static double CalculateDays(string endDate)

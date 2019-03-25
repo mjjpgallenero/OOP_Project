@@ -1,0 +1,40 @@
+﻿<UserControl x:Class="OOP_Project.Views.AddNewPaymentTransactionView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:OOP_Project.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="400" d:DesignWidth="400"
+             DataContext="{Binding Path=AddNewPaymentTransactionViewModel, Source={StaticResource Locator}}">
+    <Grid Margin="8">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0">
+            <TextBlock Text="Select Loan to pay"/>
+            <ComboBox ItemsSource="{Binding LoanTransactions}">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Jewelry ID:"/>
+                                <TextBlock Text="{Binding JewelryCollateral.JewelryId}"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Transaction Date"/>
+                                <TextBlock Text="{Binding TransactionDate}"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Remaining Balance"/>
+                                <TextBlock Text="{Binding LoanStatus}"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+        </StackPanel>
+    </Grid>
+</UserControl>

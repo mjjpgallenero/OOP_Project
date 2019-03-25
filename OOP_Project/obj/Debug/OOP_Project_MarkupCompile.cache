@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\2noob4you\Desktop\School\program\Github\OOP\OOP_Project\OOP_Project\App.xaml
-6-1427462088
+7-351159114
 
-20-1248693095
+22588044435
 711963682226
-MainWindow.xaml;Views\AddNewCustomerView.xaml;Views\AddNewLoanTransactionView.xaml;Views\GenInformationView.xaml;Views\MainTransactionWindow.xaml;Views\TransactionsView.xaml;
+MainWindow.xaml;Views\AddNewCustomerView.xaml;Views\AddNewLoanTransactionView.xaml;Views\AddNewPaymentTransactionView.xaml;Views\GenInformationView.xaml;Views\MainTransactionWindow.xaml;Views\TransactionsView.xaml;
 
 False
 

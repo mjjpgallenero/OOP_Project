@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.ObjectModel;
+using System.Linq;
 using GalaSoft.MvvmLight;
 
 namespace OOP_Project
@@ -7,14 +8,12 @@ namespace OOP_Project
     public class LoanTransaction : ObservableObject
     {
         private Jewelry _jewelryCollateral;
-        private double _loanAmount;
         private DateTime _transactionDate;
-        private double _remainingBalance;
         private Customer _customer;
 
         public LoanTransaction()
         {
-            
+
         }
 
         public Customer Customer
@@ -53,17 +52,27 @@ namespace OOP_Project
             }
         }
 
-        public double RemainingBalance
+        public bool Status
         {
             get
             {
-                foreach (var paymentTransaction in PaymentTransactions)
+                if (PaymentTransactions.Count == 0) return false;
+                else
                 {
-                    _remainingBalance = paymentTransaction.AccumulatedAmountOfLoan - paymentTransaction.PaymentAmount;
+                    var balance = PaymentTransactions.LastOrDefault().RemainingBalance;
+                    if (Math.Abs(balance) > 0) return false;
+                    else return true;
                 }
-                return _remainingBalance;
             }
+        }
 
+        public string LoanStatus
+        {
+            get
+            {
+                if (Status) return "Fully paid";
+                else return "Pending";
+            }
         }
 
         public ObservableCollection<PaymentTransaction> PaymentTransactions { get; } = new ObservableCollection<PaymentTransaction>();

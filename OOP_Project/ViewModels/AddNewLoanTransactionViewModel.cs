@@ -40,10 +40,8 @@ namespace OOP_Project.ViewModels
             get { return _newJewelryQuality; }
             set
             {
-                //if (value == "10k" || value == "18k" || value == "21k") _newJewelryQuality = value;
                 _newJewelryQuality = value;
                 RaisePropertyChanged(nameof(NewJewelryQuality));
-                //RaisePropertyChanged(nameof(NewJewelryTotalValue));
             }
         }
 
@@ -53,9 +51,7 @@ namespace OOP_Project.ViewModels
             set
             {
                 _newJewelryWeight = value;
-               // _newJewelryWeight -= NewJewelryCrystalWeight;
                 RaisePropertyChanged(nameof(NewJewelryWeight));
-                //RaisePropertyChanged(nameof(NewJewelryTotalValue));
             }
         }
 
@@ -66,8 +62,6 @@ namespace OOP_Project.ViewModels
             {
                 _newJewelryCrystalWeight = value;
                 RaisePropertyChanged(nameof(NewJewelryCrystalWeight));
-                //RaisePropertyChanged(nameof(NewJewelryWeight));
-                //RaisePropertyChanged(nameof(NewJewelryTotalValue));
             }
         }
 
@@ -85,25 +79,31 @@ namespace OOP_Project.ViewModels
 
         private void AddNewLoanTransactionProc()
         {
-            var newJewelry = new Jewelry();
-            newJewelry.JewelryId =
-               $"0000000{(int.Parse(_mainTransactionWindowViewModel.SelectedCustomer.LoanTransactions.LastOrDefault().JewelryCollateral.JewelryId) + 1)}";
-            newJewelry.JewelryQuality = NewJewelryQuality;
-            newJewelry.JewelryType = NewJewelryType;
-            if (NewJewelryCrystalWeight != null) newJewelry.CrystalWeight = (double) NewJewelryCrystalWeight;
-            if (NewJewelryWeight != null) newJewelry.Weight = (double) NewJewelryWeight;
-            newJewelry.Description = NewJewelryDescription;
-            var newLoanTransaction = new LoanTransaction();
-            newLoanTransaction.JewelryCollateral = newJewelry;
-            newLoanTransaction.Customer = _mainTransactionWindowViewModel.SelectedCustomer;
-            newLoanTransaction.TransactionDate = DateTime.UtcNow;
-            _mainTransactionWindowViewModel.SelectedCustomer.LoanTransactions.Add(newLoanTransaction);
-            MessageBox.Show("Loan Successful!", "Transaction Alert", MessageBoxButton.OK);
-            NewJewelryType = null;
-            NewJewelryQuality = null;
-            NewJewelryWeight = null;
-            NewJewelryCrystalWeight = null;
-            NewJewelryDescription = null;
+            if (NewJewelryCrystalWeight >= NewJewelryWeight)
+                MessageBox.Show("The crystal's weight cannot be more than the jewelry's weight.", "Error",
+                    MessageBoxButton.OK);
+            else
+            {
+                var newJewelry = new Jewelry();
+                newJewelry.JewelryId =
+                    $"0000000{(int.Parse(_mainTransactionWindowViewModel.SelectedCustomer.LoanTransactions.LastOrDefault().JewelryCollateral.JewelryId) + 1)}";
+                newJewelry.JewelryQuality = NewJewelryQuality;
+                newJewelry.JewelryType = NewJewelryType;
+                if (NewJewelryCrystalWeight != null) newJewelry.CrystalWeight = (double) NewJewelryCrystalWeight;
+                if (NewJewelryWeight != null) newJewelry.Weight = (double) NewJewelryWeight;
+                newJewelry.Description = NewJewelryDescription;
+                var newLoanTransaction = new LoanTransaction();
+                newLoanTransaction.JewelryCollateral = newJewelry;
+                newLoanTransaction.Customer = _mainTransactionWindowViewModel.SelectedCustomer;
+                newLoanTransaction.TransactionDate = DateTime.UtcNow;
+                _mainTransactionWindowViewModel.SelectedCustomer.LoanTransactions.Add(newLoanTransaction);
+                MessageBox.Show("Loan Successful!", "Transaction Alert", MessageBoxButton.OK);
+                NewJewelryType = null;
+                NewJewelryQuality = null;
+                NewJewelryWeight = null;
+                NewJewelryCrystalWeight = null;
+                NewJewelryDescription = null;
+            }
         }
 
         private bool AddNewLoanTransactionCondition()
@@ -113,22 +113,8 @@ namespace OOP_Project.ViewModels
             {
                 return false;
             }
-            else
-            {
-                return true;
-            }
+
+            return true;
         }
-        //public double NewJewelryTotalValue
-        //{
-        //    get
-        //    {
-        //        if (NewJewelryQuality == "10k") return _newJewelryTotalValue = (NewJewelryWeight * 0.417) * 928.64;
-        //        if (NewJewelryQuality == "18k") return _newJewelryTotalValue = (NewJewelryWeight * 0.75) * 1670.75;
-        //        if (NewJewelryQuality == "21k") return _newJewelryTotalValue = (NewJewelryWeight * 0.875) * 1949.21;
-
-        //        return 0;
-        //    }
-
-        //}
     }
 }

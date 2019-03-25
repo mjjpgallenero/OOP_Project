@@ -37,3 +37,5 @@ C:\Users\2noob4you\Desktop\School\program\Github\OOP\OOP_Project\OOP_Project\obj
 C:\Users\2noob4you\Desktop\School\program\Github\OOP\OOP_Project\OOP_Project\obj\Debug\Views\AddNewLoanTransactionView.g.cs
 C:\Users\2noob4you\Desktop\School\program\Github\OOP\OOP_Project\OOP_Project\obj\Debug\Views\AddNewLoanTransactionView.baml
 C:\Users\2noob4you\Desktop\School\program\Github\OOP\OOP_Project\OOP_Project\obj\Debug\OOP_Project.csprojAssemblyReference.cache
+C:\Users\2noob4you\Desktop\School\program\Github\OOP\OOP_Project\OOP_Project\obj\Debug\Views\AddNewPaymentTransactionView.g.cs
+C:\Users\2noob4you\Desktop\School\program\Github\OOP\OOP_Project\OOP_Project\obj\Debug\Views\AddNewPaymentTransactionView.baml

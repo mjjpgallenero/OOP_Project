@@ -14,6 +14,7 @@ namespace OOP_Project
             SimpleIoc.Default.Register<AddNewCustomerViewModel>();
             SimpleIoc.Default.Register<MainTransactionWindowViewModel>();
             SimpleIoc.Default.Register<AddNewLoanTransactionViewModel>();
+            SimpleIoc.Default.Register<AddNewPaymentTransactionViewModel>();
         }
         
         public MainWindowViewModel MainWindowViewModel
@@ -34,6 +35,11 @@ namespace OOP_Project
         public AddNewLoanTransactionViewModel AddNewLoanTransactionViewModel
         {
             get { return ServiceLocator.Current.GetInstance<AddNewLoanTransactionViewModel>(); }
+        }
+
+        public AddNewPaymentTransactionViewModel AddNewPaymentTransactionViewModel
+        {
+            get { return ServiceLocator.Current.GetInstance<AddNewPaymentTransactionViewModel>(); }
         }
     }
 }
