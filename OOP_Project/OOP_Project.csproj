@@ -70,6 +70,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="BoolToVisibilityConverter.cs" />
     <Compile Include="Models\Jewelry.cs" />
     <Compile Include="Models\LoanTransaction.cs" />
     <Compile Include="Models\PaymentTransaction.cs" />

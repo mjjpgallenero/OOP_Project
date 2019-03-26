@@ -25,6 +25,7 @@ namespace OOP_Project.ViewModels
             jewelry.JewelryQuality = "10k";
             jewelry.CrystalWeight = 1.5;
             jewelry.Weight = 6;
+            jewelry.Description = "Few scratches, slightly used";
 
             var loanTransaction = new LoanTransaction();
             loanTransaction.Customer = SelectedCustomer;

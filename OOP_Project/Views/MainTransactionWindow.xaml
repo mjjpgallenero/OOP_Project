@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:OOP_Project.Views"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="MainTransactionWindow" Height="400" Width="600"
+        Title="MainTransactionWindow" Height="450" Width="600"
         DataContext="{Binding MainTransactionWindowViewModel, Source={StaticResource Locator}}">
     <Grid>
         <Grid.RowDefinitions>
@@ -103,7 +103,7 @@
                 <TabItem Header="Loan Payment"
                          FontWeight="Bold"
                          Padding="15">
-
+                <local:AddNewPaymentTransactionView/>
                 </TabItem>
             </TabControl>
         </Grid>

@@ -30,7 +30,8 @@ namespace OOP_Project.Views
         {
             if (JType.Text
                 == "" && JQuality.Text == "" && JCWeight.Text == "" &&
-                JWeight.Text == "") MessageBox.Show("Please fill in all fields.", "Error", MessageBoxButton.OK);
+                JWeight.Text == "" && JDescription.Text == "") MessageBox.Show("Please fill in all fields.", 
+                "Error", MessageBoxButton.OK);
         }
     }
 }

@@ -72,6 +72,14 @@
                                            Padding="2"/>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Weight:"
+                                           Padding="2"/>
+                                <TextBlock Text="{Binding Path=JewelryCollateral.Weight}"
+                                           Padding="2"/>
+                                <TextBlock Text="grams"
+                                           Padding="2"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
                                 <TextBlock Text="Price:"
                                            Padding="2"/>
                                 <TextBlock Text="{Binding Path=JewelryCollateral.TotalValue, StringFormat=C, ConverterCulture=php-PH}"
