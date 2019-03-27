@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Windows.Media;
 using GalaSoft.MvvmLight;
 
 namespace OOP_Project.ViewModels
@@ -34,11 +35,19 @@ namespace OOP_Project.ViewModels
             SelectedCustomer.LoanTransactions.Add(loanTransaction);
 
             var paymentTransaction = new PaymentTransaction();
+            paymentTransaction.Loan = loanTransaction;
             paymentTransaction.JewelryCollateral = jewelry;
             paymentTransaction.PaymentDate = new DateTime(2019, 04, 19);
             paymentTransaction.PaymentAmount = 1000;
             loanTransaction.PaymentTransactions.Add(paymentTransaction);
-            paymentTransaction.Loan = loanTransaction;
+
+            double payments = 0;
+            foreach (var p in loanTransaction.PaymentTransactions)
+            {
+                payments = payments + p.PaymentAmount;
+            }
+
+            loanTransaction.RemainingBalance = loanTransaction.ToBePaid - payments;
         }
 
         public Customer SelectedCustomer

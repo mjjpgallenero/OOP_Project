@@ -5,7 +5,7 @@ using System.Windows.Data;
 
 namespace OOP_Project
 {
-    public class BoolToVisibilityConverter : IValueConverter
+    public class InverseBoolToVisibilityConverter : IValueConverter
     {
         #region Implementation of IValueConverter
 

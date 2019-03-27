@@ -25,5 +25,10 @@ namespace OOP_Project.Views
             InitializeComponent();
             DataContext = App.Locator.MainTransactionWindowViewModel;
         }
+
+        private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

@@ -70,11 +70,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="BoolToVisibilityConverter.cs" />
+    <Compile Include="Converters\BoolToVisibilityConverter.cs" />
+    <Compile Include="Converters\InverseBoolToVisibilityConverter.cs" />
     <Compile Include="Models\Jewelry.cs" />
     <Compile Include="Models\LoanTransaction.cs" />
     <Compile Include="Models\PaymentTransaction.cs" />
-    <Compile Include="NullToVisibilityConverter.cs" />
+    <Compile Include="Converters\NullToVisibilityConverter.cs" />
     <Compile Include="ViewModelLocator.cs" />
     <Compile Include="ViewModels\AddNewCustomerViewModel.cs" />
     <Compile Include="ViewModels\AddNewLoanTransactionViewModel.cs" />

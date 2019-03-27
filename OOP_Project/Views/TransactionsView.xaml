@@ -54,6 +54,12 @@
                                     <TextBlock Text="{Binding Path=LoanStatus}"
                                                Padding="2"/>
                                 </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Remaining Balance:"
+                                               Padding="2"/>
+                                    <TextBlock Text="{Binding Path=RemainingBalance}"
+                                               Padding="2"/>
+                                </StackPanel>
                             </StackPanel>
                         </Border>
                     </DataTemplate>
@@ -103,13 +109,6 @@
                                         <TextBlock Text="{Binding Path=JewelryCollateral.JewelryType}"
                                                    Padding="2"/>
                                     </StackPanel>
-                                    
-                                    <StackPanel Orientation="Horizontal">
-                                        <TextBlock Text="Accrued Amount:"
-                                                   Padding="2"/>
-                                        <TextBlock Text="{Binding Path=AccumulatedAmountOfLoan}"
-                                                   Padding="2"/>
-                                    </StackPanel>
                                     <StackPanel Orientation="Horizontal">
                                         <TextBlock Text="Amount paid:"
                                                    Padding="2"/>
@@ -120,12 +119,6 @@
                                         <TextBlock Text="Date of Payment:"
                                                    Padding="2"/>
                                         <TextBlock Text="{Binding Path=PaymentDate, StringFormat=d}"
-                                                   Padding="2"/>
-                                    </StackPanel>
-                                    <StackPanel Orientation="Horizontal">
-                                        <TextBlock Text="Remaining Balance:"
-                                                   Padding="2"/>
-                                        <TextBlock Text="{Binding Path=RemainingBalance}"
                                                    Padding="2"/>
                                     </StackPanel>
                             </StackPanel>

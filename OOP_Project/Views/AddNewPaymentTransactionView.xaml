@@ -47,32 +47,47 @@
 
         <Grid Grid.Row="1" Visibility="{Binding SelectedLoanTransaction, Converter={StaticResource NullToVisibilityConverter}}">
 
-            <Grid Visibility="{Binding SelectedLoanTransaction.Status, Converter={StaticResource BoolToVisibilityConverter}}">
+            <Grid Visibility="{Binding SelectedLoanTransaction.Status, Converter={StaticResource InverseBoolToVisibilityConverter}}">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
 
                 <StackPanel Grid.Row="0">
+                    <TextBlock Text="Remaining Balance"
+                               FontWeight="Bold"
+                               Padding="2"/>
+                    <TextBlock Text="{Binding SelectedLoanTransaction.RemainingBalance}"
+                               Padding="2"/>
+                </StackPanel>
+                <StackPanel Grid.Row="1">
                     <TextBlock Text="Date of Payment"
                                FontWeight="Bold"
                                Padding="2"/>
-                    <DatePicker Text="{Binding DateOfPayment}"/>
+                    <DatePicker SelectedDate="{Binding DateOfPayment}"
+                                Text="{Binding DateToday}"
+                                />
                 </StackPanel>
-                <StackPanel Grid.Row="1">
+                <StackPanel Grid.Row="2">
                     <TextBlock Text="Payment Amount"
                                FontWeight="Bold"
                                Padding="2"/>
-                    <TextBox Text=""/>
+                    <TextBox Text="{Binding PaymentInput}"/>
+                </StackPanel>
+                <StackPanel Grid.Row="3" 
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Bottom">
+                    <Button Content="Confirm"
+                            Command="{Binding AddNewPaymentTransactionCommand}"/>
                 </StackPanel>
             </Grid>
 
-            <!--<Grid Visibility="{Binding Path=SelectedLoanTransaction.Status, Converter={StaticResource BoolToVisibilityConverter}}">
+            <Grid Visibility="{Binding Path=SelectedLoanTransaction.Status, Converter={StaticResource BoolToVisibilityConverter}}">
                 <TextBlock Text="Loan is already fully paid."
                            Padding="2"/>
-            </Grid>-->
+            </Grid>
             
         </Grid>
 

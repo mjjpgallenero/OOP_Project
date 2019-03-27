@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Globalization;
+using System.Linq;
 using GalaSoft.MvvmLight;
 
 namespace OOP_Project
@@ -10,7 +11,6 @@ namespace OOP_Project
         private Jewelry _jewelryCollateral;
         private double _accumulatedAmountOfLoan;
         private double _paymentAmount;
-        private double _remainingBalance;
         private DateTime _paymentDate;
 
         public PaymentTransaction()
@@ -25,7 +25,6 @@ namespace OOP_Project
             {
                 _loan = value; 
                 RaisePropertyChanged(nameof(Loan));
-                RaisePropertyChanged(nameof(AccumulatedAmountOfLoan));
             }
         }
 
@@ -39,17 +38,6 @@ namespace OOP_Project
             }
         }
 
-        public double AccumulatedAmountOfLoan
-        {
-            get
-            {
-                _accumulatedAmountOfLoan = Loan.LoanAmount +
-                                           (Loan.LoanAmount * 0.01 * (CalculateDays(PaymentDate.ToShortDateString())) / 30);
-                return _accumulatedAmountOfLoan;
-            }
-
-        }
-
         public double PaymentAmount
         {
             get { return _paymentAmount; }
@@ -57,7 +45,6 @@ namespace OOP_Project
             {
                 _paymentAmount = value; 
                 RaisePropertyChanged(nameof(PaymentAmount));
-                RaisePropertyChanged(nameof(RemainingBalance));
             }
         }
 
@@ -69,26 +56,6 @@ namespace OOP_Project
                 _paymentDate = value;
                 RaisePropertyChanged(nameof(PaymentDate));
             }
-        }
-
-        public double RemainingBalance
-        {
-            get
-            {
-                _remainingBalance = AccumulatedAmountOfLoan - PaymentAmount;
-                return _remainingBalance;
-            }
-
-        }
-
-        public static double CalculateDays(string endDate)
-        {
-            DateTime end = Convert.ToDateTime(endDate);
-            DateTime start = DateTime.UtcNow;
-
-            var months = 12 * (end.Year - start.Year) + (end.Month - start.Month);
-
-            return months * 30;
         }
     }
 }

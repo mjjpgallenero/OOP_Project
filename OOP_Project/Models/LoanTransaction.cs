@@ -10,6 +10,7 @@ namespace OOP_Project
         private Jewelry _jewelryCollateral;
         private DateTime _transactionDate;
         private Customer _customer;
+        private double _remainingBalance;
 
         public LoanTransaction()
         {
@@ -52,6 +53,21 @@ namespace OOP_Project
             }
         }
 
+        public double ToBePaid
+        {
+            get { return CalculateInterest(LoanAmount); }
+        }
+
+        public double RemainingBalance
+        {
+            get { return _remainingBalance; }
+            set
+            {
+                _remainingBalance = value;
+                RaisePropertyChanged(nameof(RemainingBalance));
+            }
+        }
+
         public bool Status
         {
             get
@@ -59,8 +75,8 @@ namespace OOP_Project
                 if (PaymentTransactions.Count == 0) return false;
                 else
                 {
-                    var balance = PaymentTransactions.LastOrDefault().RemainingBalance;
-                    if (Math.Abs(balance) > 0) return false;
+                    //var balance = PaymentTransactions.LastOrDefault().RemainingBalance;
+                    if (Math.Abs(RemainingBalance) > 0) return false;
                     else return true;
                 }
             }
@@ -77,6 +93,19 @@ namespace OOP_Project
 
         public ObservableCollection<PaymentTransaction> PaymentTransactions { get; } = new ObservableCollection<PaymentTransaction>();
 
+        //public static double CalculateDays(string endDate)
+        //{
+        //    DateTime end = Convert.ToDateTime(endDate);
+        //    DateTime start = DateTime.UtcNow;
 
+        //    var months = 12 * (end.Year - start.Year) + (end.Month - start.Month);
+
+        //    return months * 30;
+        //}
+
+        public static double CalculateInterest(double amount)
+        {
+            return amount + (amount * 0.01 * (1 / 12));
+        }
     }
 }

@@ -96,6 +96,7 @@ namespace OOP_Project.ViewModels
                 newLoanTransaction.JewelryCollateral = newJewelry;
                 newLoanTransaction.Customer = _mainTransactionWindowViewModel.SelectedCustomer;
                 newLoanTransaction.TransactionDate = DateTime.UtcNow;
+                newLoanTransaction.RemainingBalance = newLoanTransaction.ToBePaid;
                 _mainTransactionWindowViewModel.SelectedCustomer.LoanTransactions.Add(newLoanTransaction);
                 MessageBox.Show("Loan Successful!", "Transaction Alert", MessageBoxButton.OK);
                 NewJewelryType = null;

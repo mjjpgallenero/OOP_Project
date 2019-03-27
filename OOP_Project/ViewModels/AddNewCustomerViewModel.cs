@@ -47,8 +47,7 @@ namespace OOP_Project.ViewModels
                 _newCustomerContactNumber = value;
                 RaisePropertyChanged(nameof(NewCustomerContactNumber));
 
-                int num;
-                bool flag = int.TryParse(_newCustomerContactNumber, out num);
+                bool flag = int.TryParse(_newCustomerContactNumber, out var num);
 
                 if (flag)
                 {
